@@ -38,3 +38,54 @@ gradle -v
 
 WSL: 172.20.118.253
 Win10: 172.20.112.1
+
+#If you want the script to remain after closing the terminal, another option is to use setsid:
+setsid script.sh
+
+#just add a & to the end of the command
+script.sh &
+command &
+
+#If you are running it in a terminal, and you want to then close the terminal, use nohup or disown
+nohup
+
+nohup script.sh &
+disown
+
+script &
+disown
+
+
+
+#You should really decide what you want to do with any output from the script. It makes sense to either throw it away, or catch it in a logfile.
+# Throw it away.
+/home/my_user/scripts/my_script.sh >> /dev/null 2>&1 &
+
+# Redirect to log file.
+/home/my_user/scripts/my_script.sh >> /home/my_user/scripts/logs/my_script.log 2>&1 &
+
+#If you capture it in a log file, you can keep an eye on it by tailing the log file.
+tail -f /home/my_user/scripts/logs/my_script.log
+
+#The script can still be affected by hang-up signals. You can stop this by using the nohup command. 
+#This will accept all standard output and standard error by default, but you can still use a custom log file.
+
+# All output directed to nohup.out.
+nohup /home/my_user/scripts/my_script.sh &
+
+# All output captured by logfile.
+nohup /home/my_user/scripts/my_script.sh >> /home/my_user/scripts/logs/my_script.log 2>&1 &
+
+#Checking Background Jobs
+#The jobs command lists the current background jobs and their state.
+
+$ jobs
+[1]+  Running                 /home/my_user/scripts/my_script.sh >> /home/my_user/scripts/logs/my_script.log 2>&1 &
+$
+
+You can bring a job to the foreground by issuing the fg command for the job of interest.
+
+$ fg 1
+
+#nohup $khome/bin/zookeeper-server-start.sh $kconfig/props/zookeeper.properties >> $home/logs/kafka_zookeeper.log 2>&1 &
+#nohup $khome/bin/kafka-server-start.sh $kconfig/props/server.properties >> $home/logs/kafka_zookeeper.log 2>&1 &
