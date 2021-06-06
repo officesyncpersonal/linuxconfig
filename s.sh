@@ -14,5 +14,17 @@ alias kl='cd $HOME/logs'
 
 alias lip='ip addr | grep eth0'
 
+alias g='git $*'
+alias gs='git status'
+alias gc='git clone $*'
+alias gk='git checkout $*'
+alias gu='git push'
+alias gp='git pull'
+alias gf='git fetch origin'
+alias gl='git branch -r & git branch -a'
+alias gr='git config --get remote.origin.url & git remote show origin'
+alias gm='git commit $*'
+
+
 #sh $lconfig/s.sh
 
