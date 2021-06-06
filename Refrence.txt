@@ -1,0 +1,40 @@
+#Upgrages apt
+sudo apt update
+#Installs JDK
+sudo apt install default-jdk
+
+
+service  --status-all
+
+/usr/lib/jvm/java-1.11.0-openjdk-amd64
+
+#in file explorer to look at respective file systems
+\\wsl$
+
+#get running file systems
+wsl -l -v
+
+#WSL get host detail
+ip addr | grep eth0
+
+#Get windows machine address
+cat /etc/resolv.conf
+#Copy the IP address following the term: nameserver.
+#Connect to any Windows server using the copied IP address.
+
+#get hosts file 
+vi /etc/hosts
+
+#install net tools
+sudo apt install net-tools
+
+
+alias z='/home/dhiraj/temp/kafka/bin/zookeeper-server-start.sh /home/dhiraj/temp/scripts/kafka/config/zookeeper.properties'
+alias ks='/home/dhiraj/temp/kafka/bin/kafka-server-start.sh /home/dhiraj/temp/scripts/kafka/config/server.properties'
+alias kc='/home/dhiraj/temp/kafka/bin/connect-standalone.sh /home/dhiraj/temp/scripts/kafka/config/connect-standalone.properties /home/dhiraj/temp/scripts/kafka/config/MongoSinkConnector.properties'
+
+source /etc/profile.d/gradle.sh
+gradle -v
+
+WSL: 172.20.118.253
+Win10: 172.20.112.1
