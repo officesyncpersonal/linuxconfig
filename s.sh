@@ -2,20 +2,32 @@
 alias s='source $HOME/temp/linuxconfig/s.sh'
 alias c='clear'
 
-export tmp=$HOME/temp
-export lconfig=$tmp/linuxconfig
-export khome=$tmp/kafka
-export kconfig=$tmp/kafkaconfig
-export host=/etc/hosts
+export TMP="$HOME/tmp"
+export PKG="$HOME/package"
+export LOG="$HOME/log"
+export HOST=/etc/hosts
 
-alias kzs='nohup $khome/bin/zookeeper-server-start.sh $kconfig/props/zookeeper.properties >> $HOME/logs/kafka_zookeeper.log 2>&1 &'
-alias kss='nohup $khome/bin/kafka-server-start.sh $kconfig/props/server.properties >> $HOME/logs/kafka_server.log 2>&1 &'
-alias kl='cd $HOME/logs'
+#export TMP=$HOME/temp
+#export lconfig=$tmp/linuxconfig
+#export khome=$tmp/kafka
+#export kconfig=$tmp/kafkaconfig
+#export host=/etc/hosts
+
+#alias kzs='nohup $khome/bin/zookeeper-server-start.sh $kconfig/props/zookeeper.properties >> $HOME/logs/kafka_zookeeper.log 2>&1 &'
+#alias kss='nohup $khome/bin/kafka-server-start.sh $kconfig/props/server.properties >> $HOME/logs/kafka_server.log 2>&1 &'
+#alias kl='cd $HOME/logs'
+
+
+alias stopall='sudo systemctl stop cmak && sudo systemctl stop kafka-mongo-sink && sudo systemctl stop kafka && sudo systemctl stop zookeeper'
+alias rctl='sudo systemctl daemon-reload'
+alias startall='sudo systemctl start zookeeper && sudo systemctl start kafka && sudo systemctl stop kafka-mongo-sink && sudo systemctl start cmak'
+alias scheck='systemctl --type=service | grep -i -E "cmak|mongod|kafka|zookeeper|kafka-mongo-sink"'
+alias sstatus='sudo systemctl status'
 
 alias lip='ip addr | grep eth0'
 
 alias g='git $*'
-alias gs='git status'
+alias gt='git status'
 alias gc='git clone $*'
 alias gk='git checkout $*'
 alias gu='git push'

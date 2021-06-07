@@ -1,14 +1,36 @@
+
+#----------Mongo---#
+sudo systemctl start mongod
+
+#If you receive an error similar to the following when starting mongod:
+#Failed to start mongod.service: Unit mongod.service not found.
+sudo systemctl daemon-reload
+
+sudo systemctl status mongod
+sudo systemctl enable mongod
+sudo systemctl stop mongod
+sudo systemctl restart mongod
+sudo service mongod stop
+
+#Restart
+sudo reboot now
+
 #Upgrages apt
 sudo apt update
+
 #Installs JDK
 sudo apt install default-jdk
 
+#System wide environment variable
+sudo nano /etc/environment
 
+#Get all service status 
 service  --status-all
 
+#Jdk path
 /usr/lib/jvm/java-1.11.0-openjdk-amd64
 
-#in file explorer to look at respective file systems
+#In file explorer to look at respective file systems
 \\wsl$
 
 #get running file systems
@@ -19,16 +41,17 @@ ip addr | grep eth0
 
 #Get windows machine address
 cat /etc/resolv.conf
+
 #Copy the IP address following the term: nameserver.
 #Connect to any Windows server using the copied IP address.
 
-#get hosts file 
+#Get hosts file 
 vi /etc/hosts
 
-#install net tools
+#Install net tools
 sudo apt install net-tools
 
-
+#sample commanfs to start kafka
 alias z='/home/dhiraj/temp/kafka/bin/zookeeper-server-start.sh /home/dhiraj/temp/scripts/kafka/config/zookeeper.properties'
 alias ks='/home/dhiraj/temp/kafka/bin/kafka-server-start.sh /home/dhiraj/temp/scripts/kafka/config/server.properties'
 alias kc='/home/dhiraj/temp/kafka/bin/connect-standalone.sh /home/dhiraj/temp/scripts/kafka/config/connect-standalone.properties /home/dhiraj/temp/scripts/kafka/config/MongoSinkConnector.properties'
@@ -89,3 +112,21 @@ $ fg 1
 
 #nohup $khome/bin/zookeeper-server-start.sh $kconfig/props/zookeeper.properties >> $home/logs/kafka_zookeeper.log 2>&1 &
 #nohup $khome/bin/kafka-server-start.sh $kconfig/props/server.properties >> $home/logs/kafka_zookeeper.log 2>&1 &
+
+#The directory /var/lib/samba/usershares is set up so only root or members of the sambashare group can read or write to it.
+sudo usermod -a -G sambashare $USER
+#You can test this with id $USER and assuming usershares is not in the output, you can fix all this just by running:
+
+#Git
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint:
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
