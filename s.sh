@@ -20,7 +20,7 @@ export HOST=/etc/hosts
 
 alias stopall='sudo systemctl stop cmak && sudo systemctl stop kafka-mongo-sink && sudo systemctl stop kafka && sudo systemctl stop zookeeper'
 alias rctl='sudo systemctl daemon-reload'
-alias startall='sudo systemctl start zookeeper && sudo systemctl start kafka && sudo systemctl stop kafka-mongo-sink && sudo systemctl start cmak'
+alias startall='sudo systemctl start zookeeper && sudo systemctl start kafka && sudo systemctl start kafka-mongo-sink && sudo systemctl start cmak'
 alias scheck='systemctl --type=service | grep -i -E "cmak|mongod|kafka|zookeeper|kafka-mongo-sink"'
 alias sstatus='sudo systemctl status'
 
