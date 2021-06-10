@@ -40,8 +40,8 @@ alias gm='git commit $*'
 alias cdk='cd $HOME/temp/kafkaconfig && ll'
 alias cdl='cd $HOME/temp/linuxconfig && ll'
 
-git -C /home/common/kafkaconfig pull
+#git -C /home/common/kafkaconfig pull
 
-alias pullall='sudo git -C /home/common/kafkaconfig/ pull && sudo git -C /home/laptop/temp/linuxconfig/ pull && sudo git -C /home/laptop/temp/scripts/ pull && sudo git -C /home/laptop/temp/settings/ pull
+alias pullall='sudo git -C /home/common/kafkaconfig/ pull && sudo git -C /home/laptop/temp/linuxconfig/ pull && sudo git -C /home/laptop/temp/scripts/ pull && sudo git -C /home/laptop/temp/settings/ pull'
 #sh $lconfig/s.sh
 
