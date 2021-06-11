@@ -45,5 +45,8 @@ alias cdl='cd $HOME/temp/linuxconfig && ll'
 alias pullall='sudo git -C /home/common/kafkaconfig/ pull && sudo git -C /home/laptop/temp/linuxconfig/ pull && sudo git -C /home/laptop/temp/scripts/ pull && sudo git -C /home/laptop/temp/settings/ pull'
 
 alias sagui='/opt/ApacheGUI/bin/run.sh'
+
+alias pd='ps -aux'
+
 #sh $lconfig/s.sh
 
