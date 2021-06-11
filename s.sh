@@ -18,10 +18,10 @@ export HOST=/etc/hosts
 #alias kl='cd $HOME/logs'
 
 
-alias stopall='sudo systemctl stop cmak && sudo systemctl stop kafka-mongo-sink && sudo systemctl stop kafka && sudo systemctl stop zookeeper'
+alias stopall='sudo systemctl stop cmak && sudo systemctl stop kafka-mongo-sink && sudo systemctl stop kafka && sudo systemctl stop zookeeper && sudo systemctl stop sentry-server'
 alias rctl='sudo systemctl daemon-reload'
-alias startall='sudo systemctl start zookeeper && sudo systemctl start kafka && sudo systemctl start kafka-mongo-sink && sudo systemctl start cmak'
-alias scheck='systemctl --type=service | grep -i -E "cmak|mongod|kafka|zookeeper|kafka-mongo-sink"'
+alias startall='sudo systemctl start zookeeper && sudo systemctl start kafka && sudo systemctl start kafka-mongo-sink && sudo systemctl start cmak && sudo systemctl start sentry-server'
+alias scheck='systemctl --type=service | grep -i -E "cmak|mongod|kafka|zookeeper|kafka-mongo-sink|sentry"'
 alias sstatus='sudo systemctl status'
 
 alias lip='ip addr | grep eth0'
@@ -43,5 +43,7 @@ alias cdl='cd $HOME/temp/linuxconfig && ll'
 #git -C /home/common/kafkaconfig pull
 
 alias pullall='sudo git -C /home/common/kafkaconfig/ pull && sudo git -C /home/laptop/temp/linuxconfig/ pull && sudo git -C /home/laptop/temp/scripts/ pull && sudo git -C /home/laptop/temp/settings/ pull'
+
+alias sagui='/opt/ApacheGUI/bin/run.sh'
 #sh $lconfig/s.sh
 

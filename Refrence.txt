@@ -143,3 +143,25 @@ Password: <type your password>
 
 #To restart apache2 web server -​​
 sudo service apache2 restart
+
+
+source /etc/apache2/envvars
+/usr/sbin/apache2 -V
+sudo /etc/init.d/apache2 {start|stop|restart}
+sudo apache2ctl -S
+
+#Python test
+scrapy crawl ExtractScriptDetail -a linkArray='https://www.moneycontrol.com/india/stockpricequote/refineries/relianceindustries/RI'
+
+
+/usr/local/CMAK/target/universal/cmak-3.0.0.5/bin/cmak -Dconfig.file=/usr/local/CMAK/conf/application.conf -Dhttp.port=9002
+
+ps -aux | grep cma
+
+systemctl status cmak.service
+
+pip install --upgrade sentry-sdkimport sentry_sdk
+sentry_sdk.init(
+    "http://efd9befa648a45be92be7c315d22a429@192.168.1.2:9000/2",
+    traces_sample_rate=1.0
+)
