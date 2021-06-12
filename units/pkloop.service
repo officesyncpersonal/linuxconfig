@@ -1,0 +1,14 @@
+[Unit]
+Description=Kafka consumer loop.
+Requires=kafka.service
+After=kafka.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/laptop/temp/Python/MoneyControlSpider/WebDataReader
+ExecStart=python3 /home/laptop/temp/Python/MoneyControlSpider/WebDataReader/KafkaClient.py
+ExecStop=
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

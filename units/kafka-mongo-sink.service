@@ -1,0 +1,14 @@
+[Unit]
+Description=Apache Kafka To- Mondo DB Sink Connector
+Documentation=http://kafka.apache.org/documentation.html
+Requires=zookeeper.service
+After=zookeeper.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/kafka/bin/connect-standalone.sh /usr/local/kafka/config/connect-standalone.properties /usr/local/kafka/config/MongoSinkConnector.properties
+ExecStop=
+Restart=on-abnormal
+
+[Install]
+WantedBy=multi-user.target
