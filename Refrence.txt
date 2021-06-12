@@ -185,3 +185,9 @@ sudo bin/cmak -Dconfig.file=/usr/local/CMAK/conf/application.conf -Dhttp.port=90
 #sample sql cmd
 sqlcmd -S localhost -U SA -P 'Meghana#29'
 sqlcmd -S localhost -U SA -P 'Meghana#29' -Q "select Symbol, MoneycontrolLink as link from AnalysisDB.dbo.security where MoneycontrolLink is not null for JSON PATH"
+
+sudo reboot
+
+kafka_scriptinfo_topic
+scriptdetail
+spider-command
