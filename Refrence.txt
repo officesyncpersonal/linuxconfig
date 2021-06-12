@@ -191,3 +191,5 @@ sudo reboot
 kafka_scriptinfo_topic
 scriptdetail
 spider-command
+
+journalctl -u service-name.service -b
