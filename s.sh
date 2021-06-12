@@ -6,6 +6,8 @@ export TMP="$HOME/tmp"
 export PKG="$HOME/package"
 export LOG="$HOME/log"
 export HOST=/etc/hosts
+export SharedSetting=/home/laptop/temp/settings/CommonConfig.json
+export PYTHONPATH="${PYTHONPATH}:/home/laptop/temp/Python/MoneyControlSpider/WebDataReader"
 
 #export TMP=$HOME/temp
 #export lconfig=$tmp/linuxconfig

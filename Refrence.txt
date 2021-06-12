@@ -165,3 +165,23 @@ sentry_sdk.init(
     "http://efd9befa648a45be92be7c315d22a429@192.168.1.2:9000/2",
     traces_sample_rate=1.0
 )
+
+#change password
+sudo passwd postgres
+
+#Running kafka consumer locally
+kafka-console-producer.bat --broker-list 192.168.1.2:9092 --topic spider-command < c:\Temp\initiatMoneyControl.txt
+C:\Temp\kafka\bin\windows
+
+#Start cmak with different IP
+sudo bin/cmak -Dconfig.file=/usr/local/CMAK/conf/application.conf -Dhttp.port=9002
+
+#sample action
+{"action":"shutdown"}
+{"action":"run-spider", "spider-name":"ScriptDetail","payload":[]}
+{"action":"run-spider", "spider-name":"InitialLinks","payload":{"targettype":"kafkatopic","targetvalue":"spider-command","strategy":"spiderpacket"}}
+{"action":"run-spider", "spider-name":"InitialLinks","payload":{"targettype":"file","targetvalue":""}}
+
+#sample sql cmd
+sqlcmd -S localhost -U SA -P 'Meghana#29'
+sqlcmd -S localhost -U SA -P 'Meghana#29' -Q "select Symbol, MoneycontrolLink as link from AnalysisDB.dbo.security where MoneycontrolLink is not null for JSON PATH"
