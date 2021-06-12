@@ -4,6 +4,8 @@ Requires=kafka.service
 After=kafka.service
 
 [Service]
+Environment=SharedSetting=/home/laptop/temp/settings/CommonConfig.json PYTHONPATH="${PYTHONPATH}:/home/laptop/temp/Python/MoneyControlSpider/WebDataReader"
+User=laptop
 Type=simple
 WorkingDirectory=/home/laptop/temp/Python/MoneyControlSpider/WebDataReader
 ExecStart=python3 /home/laptop/temp/Python/MoneyControlSpider/WebDataReader/KafkaClient.py
