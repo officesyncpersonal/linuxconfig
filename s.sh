@@ -49,6 +49,6 @@ alias pullall='sudo git -C /home/common/kafkaconfig/ pull && sudo git -C /home/l
 alias sagui='/opt/ApacheGUI/bin/run.sh'
 
 alias pd='ps -aux'
-
+alias startkloop='python /home/laptop/temp/Python/MoneyControlSpider/WebDataReader/KafkaClient.py'
 #sh $lconfig/s.sh
 
