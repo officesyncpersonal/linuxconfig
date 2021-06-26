@@ -20,10 +20,10 @@ export PYTHONPATH="${PYTHONPATH}:/home/laptop/temp/Python/MoneyControlSpider/Web
 #alias kl='cd $HOME/logs'
 
 
-alias stopall='sudo systemctl stop azure-build-agent.service && sudo systemctl stop stockdata.service && sudo systemctl stop pkloop.service && sudo systemctl stop cmak && sudo systemctl stop kafka-mongo-sink && sudo systemctl stop kafka && sudo systemctl stop zookeeper && sudo systemctl stop sentry-server'
+alias stopall='sudo systemctl stop chart-app.service && sudo systemctl stop azure-build-agent.service && sudo systemctl stop stockdata.service && sudo systemctl stop pkloop.service && sudo systemctl stop cmak && sudo systemctl stop kafka-mongo-sink && sudo systemctl stop kafka && sudo systemctl stop zookeeper && sudo systemctl stop sentry-server'
 alias rctl='sudo systemctl daemon-reload'
-alias startall='sudo systemctl start azure-build-agent.service && sudo systemctl start stockdata.service && sudo systemctl start zookeeper && sudo systemctl start kafka && sudo systemctl start kafka-mongo-sink && sudo systemctl start cmak && sudo systemctl start sentry-server && sudo systemctl start pkloop.service'
-alias scheck='systemctl --type=service | grep -i -E "cmak|mongod|kafka|zookeeper|kafka-mongo-sink|sentry|pkloop|stockdata|azure"'
+alias startall='sudo systemctl start chart-app.service && sudo systemctl start azure-build-agent.service && sudo systemctl start stockdata.service && sudo systemctl start zookeeper && sudo systemctl start kafka && sudo systemctl start kafka-mongo-sink && sudo systemctl start cmak && sudo systemctl start sentry-server && sudo systemctl start pkloop.service'
+alias scheck='systemctl --type=service | grep -i -E "cmak|mongod|kafka|zookeeper|kafka-mongo-sink|sentry|pkloop|stockdata|azure|chart"'
 alias sstatus='sudo systemctl status'
 
 alias lip='ip addr | grep eth0'
