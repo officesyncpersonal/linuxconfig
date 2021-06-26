@@ -219,3 +219,29 @@ http://192.168.1.2:6001/swagger/index.html
  
  
  dotnet /home/laptop/temp/Desktop/StockDataDBClientLib/StockDataWebAPI/bin/Debug/net5.0/StockDataWebAPI.dll --urls="http://localhost:8002;https://localhost:8001"
+ 
+ /var/clientapp
+ 
+ /var/clientapp/chart-app
+ 
+ 
+[Unit]
+Description=chart-app Angular app 
+[Service]
+WorkingDirectory=/var/clientapp/chart-app
+ExecStart=/usr/bin/ng serve --port 8003
+Restart=always
+RestartSec=10
+SyslogIdentifier=chart-app
+User=www-data
+Environment=ASPNETCORE_ENVIRONMENT=Development
+[Install]
+WantedBy=multi-user.target
+
+
+sudo systemctl enable chart-app.service
+sudo systemctl start chart-app.service
+sudo systemctl stop chart-app.service
+
+systemctl --type=service | grep -i -E "chart"
+sudo journalctl -u chart-app.service -e
