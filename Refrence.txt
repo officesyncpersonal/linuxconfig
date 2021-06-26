@@ -193,3 +193,29 @@ scriptdetail
 spider-command
 
 journalctl -u service-name.service -b
+
+
+sudo service apache2 restart
+cp -r /home/laptop/temp/Desktop/StockDataDBClientLib/StockDataWebAPI/bin/Debug/net5.0/publish/* ~/temp/net-core-publish/stockdata-publish
+/home/laptop/temp/net-core-publish/stockdata-publish/StockDataWebAPI.dll
+StockDataWebAPI.dll
+
+
+sudo systemctl enable stockdata.service
+sudo systemctl start stockdata.service
+
+systemctl --type=service | grep -i -E "stock"
+sudo journalctl -u stockdata.service -b
+sudo journalctl -u stockdata.service -e
+
+sudo systemctl start stockdata.service
+sudo systemctl stop stockdata.service
+
+
+http://192.168.1.2:6001/swagger/index.html
+
+
+ sudo cp -r /home/laptop/temp/net-core-publish/stockdata-publish/* /var/aspnetcore/stockdata-publish
+ 
+ 
+ dotnet /home/laptop/temp/Desktop/StockDataDBClientLib/StockDataWebAPI/bin/Debug/net5.0/StockDataWebAPI.dll --urls="http://localhost:8002;https://localhost:8001"
