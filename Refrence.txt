@@ -170,7 +170,8 @@ sentry_sdk.init(
 sudo passwd postgres
 
 #Running kafka consumer locally
-kafka-console-producer.bat --broker-list 192.168.1.2:9092 --topic spider-command < c:\Temp\initiatMoneyControl.txt
+kafka-console-producer.bat --broker-list 192.168.1.2:9092 --topic spider-command < c:\Temp\kafkaconfig\jobs\initiatMoneyControl.txt
+kafka-console-producer.bat --broker-list 192.168.1.2:9092 --topic kafka_scriptinfo_topic < c:\Temp\kafkaconfig\jobs\initiatMoneyControl.txt
 C:\Temp\kafka\bin\windows
 
 #Start cmak with different IP
@@ -245,3 +246,11 @@ sudo systemctl stop chart-app.service
 
 systemctl --type=service | grep -i -E "chart"
 sudo journalctl -u chart-app.service -e
+
+sudo journalctl -u pkloop.service -e
+
+sudo journalctl -u stockdata.service -e
+
+sudo ln -s /home/laptop/temp/linuxconfig/units/mongo-python-http.service mongo-python-http.service
+sudo systemctl enable mongo-python-http.service
+sudo systemctl start mongo-python-http.service
