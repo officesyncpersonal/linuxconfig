@@ -1,0 +1,12 @@
+[Unit]
+Description=chart-app Angular app 
+[Service]
+WorkingDirectory=/var/clientapp/WebApp/chart-app
+ExecStart=/usr/bin/ng serve --port 8003
+Restart=always
+RestartSec=10
+SyslogIdentifier=chart-app
+User=www-data
+Environment=ASPNETCORE_ENVIRONMENT=Development
+[Install]
+WantedBy=multi-user.target

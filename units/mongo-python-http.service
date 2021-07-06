@@ -1,0 +1,14 @@
+[Unit]
+Description=Mongo Http Python server
+
+[Service]
+Environment=SharedSetting=/home/laptop/temp/settings/CommonConfig.json PYTHONPATH="${PYTHONPATH}:/home/laptop/temp/Python/MoneyControlSpider/WebDataReader"
+User=laptop
+Type=simple
+WorkingDirectory=/home/laptop/temp/Python/mongo-http
+ExecStart=python3 /home/laptop/temp/Python/mongo-http/server.py
+ExecStop=
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
