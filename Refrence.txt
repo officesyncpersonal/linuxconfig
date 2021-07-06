@@ -254,3 +254,68 @@ sudo journalctl -u stockdata.service -e
 sudo ln -s /home/laptop/temp/linuxconfig/units/mongo-python-http.service mongo-python-http.service
 sudo systemctl enable mongo-python-http.service
 sudo systemctl start mongo-python-http.service
+sudo journalctl -u mongo-python-http.service -e
+
+vault server -config=config.hcl
+
+-----------------Winrm-----------------------------
+winrm enumerate winrm/config/Listener
+winrm quickconfig
+winrm quickconfig -transport:https
+winrm get winrm/config/Service
+winrm get winrm/config/Winrs
+
+winrm set winrm/config/client/auth '@{Basic="true"}'
+winrm set winrm/config/service/auth '@{Basic="true"}'
+
+winrm configSDDL default
+
+
+
+
+
+------------------Ansible-------------------------
+ansible all --list-hosts
+sudo nano /etc/ansible/ansible.cfg
+sudo nano /etc/ansible/hosts
+
+ansible ubuntu -m ping
+ansible win10 -m win_ping
+
+ansible ubuntu -m ping && ansible win10 -m win_ping
+
+curl -L https://github.com/ansible-semaphore/semaphore/releases/download/v2.7.0/semaphore_2.7.0_linux_amd64.tar.gz > /usr/bin/semaphore
+
+sudo /etc/init.d/mysql start
+
+/tmp/semaphore
+
+You are all setup dhiraj!
+ Re-launch this program pointing to the configuration file
+
+./semaphore -config /home/dhiraj/config.json
+
+ To run as daemon:
+
+nohup ./semaphore -config /home/dhiraj/config.json &
+
+ You can login with dhiraj@dhiraj.com or dhiraj.
+ 
+ nohup: ignoring input and appending output to 'nohup.out'
+ 
+ export PATH="/home/dhiraj/.local/bin:$PATH"
+ 
+ 
+ Since a2ensite, a2enmod and a2enconf are the same (under debian/ubuntu), one could also consider to do a combined ansible
+ sudo a2ensite Apache2Proxy.conf 
+ 
+ - name: Clone bitbucket repo
+  git: ...
+  become: yes
+  become_user: harry
+  
+  
+  
+  Get-Service LxssManager | Restart-Service
+  
+  dhiraj@Laptop:/mnt/c/Users/dhira/source/repos/Infrastructure/ansible/attempt1$ ansible-playbook clone_all_repos_on_all_servers.yml --tags office_git_clone -e "win_parent_folder=C:\Temp\sandbox\root"
