@@ -38,6 +38,7 @@ alias gf='git fetch origin'
 alias gl='git branch -r & git branch -a'
 alias gr='git config --get remote.origin.url & git remote show origin'
 alias gm='git commit $*'
+alias gac='git add * & git commit -m "Auto Commit" & git pull & git push '
 
 alias cdk='cd $HOME/temp/kafkaconfig && ll'
 alias cdl='cd $HOME/temp/linuxconfig && ll'
