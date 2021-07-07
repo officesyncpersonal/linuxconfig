@@ -319,3 +319,7 @@ nohup ./semaphore -config /home/dhiraj/config.json &
   Get-Service LxssManager | Restart-Service
   
   dhiraj@Laptop:/mnt/c/Users/dhira/source/repos/Infrastructure/ansible/attempt1$ ansible-playbook clone_all_repos_on_all_servers.yml --tags office_git_clone -e "win_parent_folder=C:\Temp\sandbox\root"
+  
+  sudo systemctl daemon-reload
+  sudo systemctl start jenkins  
+  sudo systemctl status jenkins
