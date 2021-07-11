@@ -1,33 +1,10 @@
 #! /bin/sh
+
+#Usual aliases
 alias s='source $LXC/s.sh'
 alias c='clear'
 
-#export TMP="$HOME/tmp"
-#export PKG="$HOME/package"
-#export LOG="$HOME/log"
-export HOST=/etc/hosts
-export SharedSetting=/home/laptop/temp/settings/CommonConfig.json
-export PYTHONPATH="${PYTHONPATH}:$PYT/MoneyControlSpider/WebDataReader"
-
-#export TMP=$HOME/temp
-#export lconfig=$tmp/linuxconfig
-#export khome=$tmp/kafka
-#export kconfig=$tmp/kafkaconfig
-#export host=/etc/hosts
-
-#alias kzs='nohup $khome/bin/zookeeper-server-start.sh $kconfig/props/zookeeper.properties >> $HOME/logs/kafka_zookeeper.log 2>&1 &'
-#alias kss='nohup $khome/bin/kafka-server-start.sh $kconfig/props/server.properties >> $HOME/logs/kafka_server.log 2>&1 &'
-#alias kl='cd $HOME/logs'
-
-
-alias stopall='sudo systemctl stop mongo-python-http.service && sudo systemctl stop chart-app.service && sudo systemctl stop azure-build-agent.service && sudo systemctl stop stockdata.service && sudo systemctl stop pkloop.service && sudo systemctl stop cmak && sudo systemctl stop kafka-mongo-sink && sudo systemctl stop kafka && sudo systemctl stop zookeeper && sudo systemctl stop sentry-server'
-alias rctl='sudo systemctl daemon-reload'
-alias startall='sudo systemctl start mongo-python-http.service && sudo systemctl start chart-app.service && sudo systemctl start azure-build-agent.service && sudo systemctl start stockdata.service && sudo systemctl start zookeeper && sudo systemctl start kafka && sudo systemctl start kafka-mongo-sink && sudo systemctl start cmak && sudo systemctl start sentry-server && sudo systemctl start pkloop.service'
-alias scheck='systemctl --type=service | grep -i -E "cmak|mongod|kafka|zookeeper|kafka-mongo-sink|sentry|pkloop|stockdata|azure|chart|mongo-python-http"'
-alias sstatus='sudo systemctl status'
-
-alias lip='ip addr | grep eth0'
-
+#Git aliass
 alias g='git $*'
 alias gt='git status'
 alias gc='git clone $*'
@@ -38,20 +15,15 @@ alias gf='git fetch origin'
 alias gl='git branch -r & git branch -a'
 alias gr='git config --get remote.origin.url & git remote show origin'
 alias gm='git commit $*'
-
 alias gac='git add * & git commit -m "Auto commit" & git pull --rebase &  git push '
 alias gas='git commit -m "Auto commit" & git pull --rebase & git push '
 
-alias cdk='cd $HOME/temp/kafkaconfig && ll'
-alias cdl='cd $HOME/temp/linuxconfig && ll'
-
-#git -C /home/common/kafkaconfig pull
-
-alias pullall='sudo git -C /var/clientapp/WebApp/chart-app pull && sudo git -C /home/common/kafkaconfig/ pull && sudo git -C /home/laptop/temp/linuxconfig/ pull && sudo git -C /home/laptop/temp/scripts/ pull && sudo git -C /home/laptop/temp/settings/ pull && sudo git -C /home/laptop/temp/Python/ pull'
-
-alias sagui='/opt/ApacheGUI/bin/run.sh'
-
+#others 
+alias rctl='sudo systemctl daemon-reload'
+alias sstatus='sudo systemctl status'
 alias pd='ps -aux'
-alias startkloop='python3 /home/laptop/temp/Python/MoneyControlSpider/WebDataReader/KafkaClient.py'
-#sh $lconfig/s.sh
 
+#exports
+export HOST=/etc/hosts
+
+source $INFRA/linux_config/slocal.sh
