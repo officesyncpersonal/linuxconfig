@@ -1,13 +1,13 @@
 #! /bin/sh
-alias s='source $HOME/temp/linuxconfig/s.sh'
+alias s='source $LXC/s.sh'
 alias c='clear'
 
-export TMP="$HOME/tmp"
-export PKG="$HOME/package"
-export LOG="$HOME/log"
+#export TMP="$HOME/tmp"
+#export PKG="$HOME/package"
+#export LOG="$HOME/log"
 export HOST=/etc/hosts
 export SharedSetting=/home/laptop/temp/settings/CommonConfig.json
-export PYTHONPATH="${PYTHONPATH}:/home/laptop/temp/Python/MoneyControlSpider/WebDataReader"
+export PYTHONPATH="${PYTHONPATH}:$PYT/MoneyControlSpider/WebDataReader"
 
 #export TMP=$HOME/temp
 #export lconfig=$tmp/linuxconfig
