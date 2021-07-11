@@ -26,4 +26,4 @@ alias pd='ps -aux'
 #exports
 export HOST=/etc/hosts
 
-source $INFRA/linux_config/slocal.sh
+source $LXC/slocal.sh
